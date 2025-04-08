@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/static/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font -->
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+     
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  </head>
+  <body class="secondary-page">
+  <body>
+    <nav id="navbar">
+      <div class="nav-content">
+        <div class="sk-logo-interactive"><span>SK</span></div>
+          <div class="nav-toggle" id="navToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          <ul class="nav-links" id="navLinks">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="auth-links">
+                <a href="{{ url_for('login') }}"
+                <button class="login-btn">
+                  <i class="fas fa-sign-in-alt"></i> Login
+                </button></a>
+                <a href="{{ url_for('register') }}"
+
+                <button class="register-btn">
+                 <i class="fas fa-user-plus"></i> Register
+                </button></a>
+
+              </li>
+          </ul>
+      </div>
+  </nav>
+  <body class="secondary-page">
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="profile-wrapper">
+        <div class="glowing-border"></div>
+        <section class="profile-section">
+        <img src="/static/profile_image.jpg" alt="Sumit Kumar" class="profile-image">
+      </div>
+      <h1 class="animated-title">Sumit Kumar</h1>
+      <h1 class="animated-subtitle">
+        <span class="typing-animation">Developer</span>
+      </h1>
+      <h1 class="animated-text"> <style> color:rgb(0, 0, 0); </style>Crafting intuitive digital experiences</h1>
+      
+      <div class="cta-wrapper">
+        <a href="#contact" class="cta-button">
+          <span>Get in Touch</span>
+          <svg viewBox="0 0 13 10" height="10px" width="15px">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </a>
+  
+        <div class="social-links">
+          <a href="https://github.com/sumit007-ui" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/sumit-kumar-a0899b250/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/pb18_sumit" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #0f172a;
+  }
+</style>
+
+  </section>
+    <section id="about">
+      <div class="container">
+        <header class="page-title">
+          <h1>About Me</h1> 
+        </header>
+        <div class="about-content">
+          <div class="about-text">
+            <p>I'm a passionate web developer and BTech CSE student at GNDU, with a strong foundation in Python, HTML, CSS, and JavaScript. Over the past few years, I've actively contributed to projects and hackathons, including leading my team Digital Dreamers to top 10 recognition with innovative solutions like a gamified book exchange platform.</p>
+
+              <p>Specializing in Back-end development, I love transforming complex ideas into simple, beautiful web experiences. I’m also exploring Django, Flask, and modern tools to integrate AI and dynamic functionality into websites.</p>
+              
+             <p> Outside of code, I enjoy organizing tech events, sharing knowledge through content creation, and collaborating with communities like GNDU'Student Community and CESS. I believe in learning by building—and I’m always up for a new challenge.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <header class="page-title">
+          <h1>Skills</h1> 
+        </header>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fab fa-html5"></i>
+            <h3>HTML5</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-css3-alt"></i>
+            <h3>CSS3</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-js"></i>
+            <h3>JavaScript</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-brain"></i> 
+            <h3>AI/ML</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-python"></i> 
+            <h3>Python</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-database"></i>
+            <h3>SQL</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <header class="page-title">
+          <h1>Projects</h1> 
+        </header>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="/static/project_1.jpg" alt="Project 1">
+            <h3>Book-Exchange Platform</h3>
+            <p>A gamified web app for buying, selling, and exchanging old books. Built with Flask, HTML, CSS, JavaScript, and MySQL to offer a smooth and engaging user experience.</p>
+            <div class="project-links">
+              <a href="https://www.linkedin.com/posts/sumit-kumar-a0899b250_innovation-hackathon-achievement-activity-7256600581924954112-MKoN?utm_source=share&utm_medium=member_android&rcm=ACoAAD4VFOgB42qq_eVm-0K_PtpEQnRiSWtsUjk " class="project-link">Live Demo</a>
+              <a href="https://github.com/sumit007-ui/ZenithNenux.Website-main" class="project-link">GitHub</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="/static/project_2.jpg" alt="Project 2">
+            <h3> Blackjack Game</h3>
+            <p>A simple, interactive Blackjack game built using Python. It features basic game logic, score tracking, and a command-line interface for a fun way to practice programming with conditionals and loops.</p>
+            <div class="project-links">
+              <a href="https://www.linkedin.com/posts/sumit-kumar-a0899b250_python-codingprojects-blackjackgame-activity-7286956793375662082-QEyM?utm_source=share&utm_medium=member_android&rcm=ACoAAD4VFOgB42qq_eVm-0K_PtpEQnRiSWtsUjk " class="project-link">Live Demo</a>
+              <a href="https://github.com/sumit007-ui/Blackjack-Game" class="project-link">GitHub</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="/static/project_3.jpg" alt="Project 3">
+            <h3>Beginner Projects</h3>
+            <p>Small Python projects that helped me learn programming basics like logic, loops, and functions.</p>
+            <div class="project-links">
+              <a href="https://www.linkedin.com/posts/sumit-kumar-a0899b250_python-github-codingprojects-activity-7282721473255874560-cBwi?utm_source=share&utm_medium=member_android&rcm=ACoAAD4VFOgB42qq_eVm-0K_PtpEQnRiSWtsUjk " class="project-link">Live Demo</a>
+              <a href="https://github.com/sumit007-ui/projects" class="project-link">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <form id="contact-form" method="POST" action="{{ url_for('contact') }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <section id="contact">
+      <div class="container">
+        <header class="page-title">
+          <h1>Contact Me</h1> 
+        </header>
+        <div class="contact-content">
+          <form id="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              <script>
+                window.onload = function() {
+                  {% for category, message in messages %}
+                    alert("{{ message }}");
+                  {% endfor %}
+                }
+              </script>
+            {% endif %}
+          {% endwith %}
+
+          </form>
+        </div>
+      </div>
+    </section>
+  </form>
+  
+
+    <footer>
+      <div class="container">
+        <div class="social-links">
+          <a href="https://github.com/sumit007-ui"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/sumit-kumar-a0899b250/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/pb18_sumit?igsh=bmlxbDd5bTk4ZjVm"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 Sumit. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/static/main.js"></script>
+  </body>
+</html>
