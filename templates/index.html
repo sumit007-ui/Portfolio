@@ -28,6 +28,9 @@
               <li><a href="#skills">Skills</a></li>
               <li><a href="#projects">Projects</a></li>
               <li><a href="#contact">Contact</a></li>
+              {% if current_user.is_authenticated %}
+              <a href="{{ url_for('logout') }}">Logout</a>
+              {% else %}
               <li class="auth-links">
                 <a href="{{ url_for('login') }}"
                 <button class="login-btn">
@@ -38,6 +41,7 @@
                 <button class="register-btn">
                  <i class="fas fa-user-plus"></i> Register
                 </button></a>
+                {% endif %}
 
               </li>
           </ul>
