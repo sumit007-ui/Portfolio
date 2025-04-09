@@ -78,7 +78,24 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   }
-  
+  /* Enhanced Navigation - Mobile Menu Styles */
+.nav-toggle {
+  display: none; /* Default hidden for desktop */
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1000;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--text-color);
+  transition: var(--transition);
+}
+
   /* Hover glow + ripple effect */
   .sk-logo-interactive:hover {
     transform: scale(1.05);
