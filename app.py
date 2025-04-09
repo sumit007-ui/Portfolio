@@ -9,18 +9,15 @@ from email_validator import validate_email, EmailNotValidError
 from config import Config
 from flask_migrate import Migrate
 
-# Initialize Flask app
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Initialize extensions
 db = SQLAlchemy(app)
 csrf = CSRFProtect(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 migrate = Migrate(app, db)
 
-# Security headers
 @app.after_request
 def add_security_headers(response):
     response.headers['X-Content-Type-Options'] = 'nosniff'
@@ -28,7 +25,6 @@ def add_security_headers(response):
     response.headers['X-XSS-Protection'] = '1; mode=block'
     return response
 
-# Database Models
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
@@ -52,12 +48,10 @@ class ContactMessage(db.Model):
     message = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-# Login Manager
 @login_manager.user_loader
 def load_user(user_id):
     return db.session.get(User, int(user_id))
 
-# Routes
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -103,15 +97,12 @@ def register():
             email = request.form.get('email', '').strip()
             password = request.form.get('password', '')
 
-            # Validate email format
             valid_email = validate_email(email)
             email = valid_email.email
 
-            # Validate password
             if len(password) < 8:
                 raise ValueError("Password must be at least 8 characters")
 
-            # Check existing user
             existing_user = User.query.filter(
                 (User.username == username) | 
                 (User.email == email)
@@ -120,7 +111,6 @@ def register():
             if existing_user:
                 raise ValueError("Username or email already exists")
 
-            # Create new user
             new_user = User(username=username, email=email)
             new_user.set_password(password)
             
@@ -181,7 +171,6 @@ def contact():
 
     return redirect(url_for('index'))
 
-# Error Handlers
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
@@ -192,7 +181,6 @@ def internal_server_error(e):
     app.logger.error(f'500 Error: {e}')
     return render_template('500.html'), 500
 
-# Database Initialization
 def initialize_database():
     with app.app_context():
         db.create_all()
